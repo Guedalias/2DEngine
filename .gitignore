@@ -314,3 +314,5 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+!/SFML-2.4.2-Bin/**
