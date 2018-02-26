@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E621EC9-AE79-4370-8B92-84CA4AB79D7B}</ProjectGuid>
+    <RootNamespace>D2Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2-Bin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>flac.lib;freetype.lib;jpeg.lib;ogg.lib;openal32.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2-Bin\lib;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\openal32.dll" "$(TargetDir)openal32.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-audio-d-2.dll" "$(TargetDir)sfml-audio-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-graphics-d-2.dll" "$(TargetDir)sfml-graphics-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-network-d-2.dll" "$(TargetDir)sfml-network-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-system-d-2.dll" "$(TargetDir)sfml-system-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-d-2.dll" "$(TargetDir)sfml-window-d-2.dll"
+
+
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-audio-d.pdb" "$(TargetDir)sfml-audio-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-graphics-d.pdb" "$(TargetDir)sfml-graphics-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-network-d.pdb" "$(TargetDir)sfml-network-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-system-d.pdb" "$(TargetDir)sfml-system-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-window-d.pdb" "$(TargetDir)sfml-window-d.pdb"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2-Bin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>flac.lib;freetype.lib;jpeg.lib;ogg.lib;openal32.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2-Bin\lib;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\openal32.dll" "$(TargetDir)openal32.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-audio-d-2.dll" "$(TargetDir)sfml-audio-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-graphics-d-2.dll" "$(TargetDir)sfml-graphics-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-network-d-2.dll" "$(TargetDir)sfml-network-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-system-d-2.dll" "$(TargetDir)sfml-system-d-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-d-2.dll" "$(TargetDir)sfml-window-d-2.dll"
+
+
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-audio-d.pdb" "$(TargetDir)sfml-audio-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-graphics-d.pdb" "$(TargetDir)sfml-graphics-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-network-d.pdb" "$(TargetDir)sfml-network-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-system-d.pdb" "$(TargetDir)sfml-system-d.pdb"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\lib\sfml-window-d.pdb" "$(TargetDir)sfml-window-d.pdb"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2-Bin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>flac.lib;freetype.lib;jpeg.lib;ogg.lib;openal32.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;sfml-audio.lib;sfml-graphics.lib;sfml-main.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2-Bin\lib;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\openal32.dll" "$(TargetDir)openal32.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-audio-2.dll" "$(TargetDir)sfml-audio-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-graphics-2.dll" "$(TargetDir)sfml-graphics-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-network-2.dll" "$(TargetDir)sfml-network-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-system-2.dll" "$(TargetDir)sfml-system-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-2.dll" "$(TargetDir)sfml-window-2.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)SFML-2.4.2-Bin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>flac.lib;freetype.lib;jpeg.lib;ogg.lib;openal32.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;sfml-audio.lib;sfml-graphics.lib;sfml-main.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SFML-2.4.2-Bin\lib;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\openal32.dll" "$(TargetDir)openal32.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-audio-2.dll" "$(TargetDir)sfml-audio-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-graphics-2.dll" "$(TargetDir)sfml-graphics-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-network-2.dll" "$(TargetDir)sfml-network-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-system-2.dll" "$(TargetDir)sfml-system-2.dll"
+copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-2.dll" "$(TargetDir)sfml-window-2.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
