@@ -23,9 +23,17 @@ Engine::Renderer::Init()
 {
 	_window = new sf::RenderWindow{ sf::VideoMode(200, 200), "SFML works!" };
 
-	_renderComponentPool = new RenderComponent[64]; // should be allocated via custom aligned allocator
-	// To do Track max size and size of alive components
+	_maxComponents = 64;
+	_aliveComponents = 0;
+	_renderComponentPool = new RenderComponent[_maxComponents]; // should be allocated via custom aligned allocator
 
+	// To do Track max size and size of alive components
+	// https://www.gamedev.net/articles/programming/general-and-gameplay-programming/c-custom-memory-allocation-r3010/
+	// Allocators stuff
+
+	_textureDebug = new sf::Texture{};
+	_textureDebug->loadFromFile("./debug.png");
+	//Need for a Ressource Manager;
 	return true;
 }
 
@@ -50,11 +58,37 @@ Engine::Renderer::Render()
 {
 	_window->clear();
 	//Iterate over all renderComponent and render them;
-	for (int i = 0; i < 64; ++i)
+	for (int i = 0; i < _aliveComponents; ++i)
 	{
-		_renderComponentPool[i].Render();
+		_renderComponentPool[i].Render(_window);
 	}
 	_window->display();
 
+	return true;
+}
+
+bool
+Engine::Renderer::AddRenderComponent()
+{
+	if (_aliveComponents >= _maxComponents)
+	{
+		return false;
+	}
+	_renderComponentPool[_aliveComponents].Init(*_textureDebug);
+	++_aliveComponents;
+
+	return true;
+}
+
+bool
+Engine::Renderer::RemoveRenderComponent(size_t idx)
+{
+	if (_aliveComponents == 0)
+	{
+		return false;
+	}
+	--_aliveComponents;
+	//do remove right idx;
+	//do reordering on array;
 	return true;
 }

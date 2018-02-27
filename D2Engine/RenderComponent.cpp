@@ -11,8 +11,16 @@ Engine::RenderComponent::~RenderComponent()
 {
 }
 
-bool
-Engine::RenderComponent::Render()
+bool Engine::RenderComponent::Init(const sf::Texture& text)
 {
+	_sprite = sf::Sprite{};
+	_sprite.setTexture(text, true);
+	return true;
+}
+
+bool
+Engine::RenderComponent::Render(sf::RenderWindow* window)
+{
+	window->draw(_sprite);
 	return false;
 }

@@ -7,6 +7,7 @@ int main()
 	bool running = true;
 
 	rdr.Init();
+	rdr.AddRenderComponent();
 	while (running)
 	{
 		if (rdr.PollEvent() == false)

@@ -5,6 +5,7 @@
 namespace sf
 {
 	class RenderWindow;
+	class Texture;
 }
 
 namespace Engine
@@ -18,7 +19,13 @@ namespace Engine
 	{
 	private:
 		sf::RenderWindow*		_window;
+
 		RenderComponent*		_renderComponentPool;
+		size_t					_maxComponents;
+		size_t					_aliveComponents;
+
+		//Debug
+		sf::Texture*			_textureDebug;
 
 	public:
 		Renderer();
@@ -27,5 +34,8 @@ namespace Engine
 		bool	Init();
 		bool	PollEvent();
 		bool	Render();
+
+		bool AddRenderComponent();
+		bool RemoveRenderComponent(size_t idx);
 	};
 }
