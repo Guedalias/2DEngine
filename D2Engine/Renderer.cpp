@@ -1,6 +1,9 @@
+#include "Renderer.h"
 #include <SFML/Graphics.hpp>
 
-int main()
+using namespace Engine;
+
+Renderer::Renderer()
 {
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 	sf::CircleShape shape(100.f);
@@ -19,6 +22,8 @@ int main()
 		window.draw(shape);
 		window.display();
 	}
+}
 
-	return 0;
+Renderer::~Renderer()
+{
 }
