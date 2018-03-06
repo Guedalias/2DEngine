@@ -31,11 +31,11 @@ namespace Engine
 		Renderer();
 		~Renderer();
 
-		bool	Init();
+		bool	Init(int width = 800, int height = 600);
 		bool	PollEvent();
 		bool	Render();
 
-		bool AddRenderComponent();
-		bool RemoveRenderComponent(size_t idx);
+		RenderComponent*	AddRenderComponent();
+		bool				RemoveRenderComponent(size_t idx);
 	};
 }

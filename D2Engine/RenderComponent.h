@@ -1,13 +1,21 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include "DLLExport.h"
+#include "Vector2D.h"
+
+namespace sf
+{
+	class Sprite;
+	class Texture;
+	class RenderWindow;
+}
 
 namespace Engine
 {
-	class RenderComponent
+	class DllExport RenderComponent
 	{
 	private:
-		sf::Sprite	_sprite;
+		sf::Sprite*	_sprite;
 
 	public:
 		RenderComponent();
@@ -15,6 +23,7 @@ namespace Engine
 
 		bool Init(const sf::Texture& texture);
 		bool Render(sf::RenderWindow* window);
+		bool SetPosition(Vector2D& pos);
 	};
 
 }

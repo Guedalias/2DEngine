@@ -19,9 +19,9 @@ Renderer::~Renderer()
 }
 
 bool
-Engine::Renderer::Init()
+Engine::Renderer::Init(int width, int height)
 {
-	_window = new sf::RenderWindow{ sf::VideoMode(200, 200), "SFML works!" };
+	_window = new sf::RenderWindow{ sf::VideoMode(width, height), "test" };
 
 	_maxComponents = 64;
 	_aliveComponents = 0;
@@ -67,17 +67,18 @@ Engine::Renderer::Render()
 	return true;
 }
 
-bool
+RenderComponent*
 Engine::Renderer::AddRenderComponent()
 {
 	if (_aliveComponents >= _maxComponents)
 	{
-		return false;
+		return nullptr;
 	}
 	_renderComponentPool[_aliveComponents].Init(*_textureDebug);
+	RenderComponent* ret = &_renderComponentPool[_aliveComponents];
 	++_aliveComponents;
 
-	return true;
+	return ret;
 }
 
 bool
