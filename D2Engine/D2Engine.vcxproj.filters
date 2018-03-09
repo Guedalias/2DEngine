@@ -21,9 +21,6 @@
     <ClCompile Include="RenderComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">
@@ -35,7 +32,10 @@
     <ClInclude Include="RenderComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2D.h">
+    <ClInclude Include="Vector2D.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect2D.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

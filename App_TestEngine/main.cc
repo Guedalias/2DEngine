@@ -16,7 +16,7 @@ int main()
 	{
 		if (rdr.PollEvent() == false)
 			running = false;
-		rc->SetPosition(Engine::Vector2D{ x, y });
+		rc->SetPosition(Engine::Vector2D<float>{ x, y });
 		x += xvel;
 		y += yvel;
 		if (x > 800)

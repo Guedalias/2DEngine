@@ -44,7 +44,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -179,13 +179,13 @@ copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-2.dll" "$(TargetDir)sfml-w
   <ItemGroup>
     <ClCompile Include="RenderComponent.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLExport.h" />
+    <ClInclude Include="Rect2D.hpp" />
     <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Vector2D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "DLLExport.h"
-#include "Vector2D.h"
+#include "Vector2D.hpp"
 
 namespace sf
 {
@@ -23,7 +23,8 @@ namespace Engine
 
 		bool Init(const sf::Texture& texture);
 		bool Render(sf::RenderWindow* window);
-		bool SetPosition(Vector2D& pos);
+		
+		bool SetPosition(Vector2D<float>& pos);
 	};
 
 }
