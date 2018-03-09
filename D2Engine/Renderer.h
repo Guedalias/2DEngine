@@ -2,6 +2,8 @@
 
 #include "DLLExport.h"
 
+#include <vector>
+
 namespace sf
 {
 	class RenderWindow;
@@ -11,6 +13,7 @@ namespace sf
 namespace Engine
 {
 	class RenderComponent;
+	class IOEvent;
 }
 
 namespace Engine
@@ -32,7 +35,7 @@ namespace Engine
 		~Renderer();
 
 		bool	Init(int width = 800, int height = 600);
-		bool	PollEvent();
+		bool	PollEvent(std::vector<IOEvent>& events);
 		bool	Render();
 
 		RenderComponent*	AddRenderComponent();

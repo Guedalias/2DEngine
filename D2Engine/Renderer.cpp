@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include "RenderComponent.h"
+#include "IOEvent.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -38,7 +39,7 @@ Engine::Renderer::Init(int width, int height)
 }
 
 bool
-Engine::Renderer::PollEvent()
+Engine::Renderer::PollEvent(std::vector<IOEvent>& events)
 {
 	sf::Event event;
 	while (_window->pollEvent(event))
@@ -48,10 +49,15 @@ Engine::Renderer::PollEvent()
 			_window->close();
 			return false;
 		}
-			
+		else
+		{
+			events.push_back(IOEvent{ event });
+		}
+
 	}
 	return true;
 }
+
 
 bool
 Engine::Renderer::Render()

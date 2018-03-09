@@ -177,11 +177,13 @@ copy /Y "$(SolutionDir)SFML-2.4.2-Bin\bin\sfml-window-2.dll" "$(TargetDir)sfml-w
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IOEvent.cpp" />
     <ClCompile Include="RenderComponent.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLExport.h" />
+    <ClInclude Include="IOEvent.h" />
     <ClInclude Include="Rect2D.hpp" />
     <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="Renderer.h" />
