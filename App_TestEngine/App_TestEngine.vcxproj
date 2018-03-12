@@ -122,13 +122,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FlyController.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cc" />
     <ClCompile Include="PingPongBall.cpp" />
     <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FlyController.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="PingPongBall.h" />
     <ClInclude Include="Script.h" />
   </ItemGroup>

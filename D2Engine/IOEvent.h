@@ -10,21 +10,22 @@ namespace Engine {
 
 	class DllExport IOEvent
 	{
-	private:
-		int size;
+	public:
+		enum Type
+		{
+			MOUSECLICK,
+			MOUVEMOVE,
+			KEYPRESSED,
+			KEYRELEASED
+		};
+	public:
+		int		code;
+		Type	type;
 	public:
 		IOEvent();
 		~IOEvent();
 
 		IOEvent(const sf::Event& ev);
-	public:
-		enum Type
-		{
-			MOUSECLICK_RIGHT,
-			MOUSECLICK_LEFT,
-			MOUSECLICK_MIDDLE,
-			MOUVEMOVE,
-		};
 	};
 }
 

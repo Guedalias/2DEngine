@@ -36,6 +36,12 @@
     <ClCompile Include="PingPongBall.cpp">
       <Filter>Scripts\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyController.cpp">
+      <Filter>Scripts\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -45,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PingPongBall.h">
+      <Filter>Scripts\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyController.h">
       <Filter>Scripts\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

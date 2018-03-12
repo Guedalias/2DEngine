@@ -3,8 +3,10 @@
 #include "../D2Engine/IOEvent.h"
 
 #include "GameObject.h"
+#include "InputManager.h"
 
 #include "PingPongBall.h"
+#include "FlyController.h"
 
 #include <vector>
 #include <chrono>
@@ -25,14 +27,17 @@ int main()
 	rdr.Init(800, 600);
 
 	GameEngine::GameObject go = GameEngine::GameObject();
+	GameEngine::GameObject controller = GameEngine::GameObject();
 
 	//UGLY AS FUCK
 	go.AddRenderComponent(rdr.AddRenderComponent());
 	go.AddScript(new Test::PingPongBall{});
 
-	std::vector<Engine::IOEvent> events;
+	controller.AddRenderComponent(rdr.AddRenderComponent());
+	controller.AddScript(new Test::FlyController{});
+	
 
-	//EventManager.subcribe(gameObject, MOUSE_CLICK);
+	GameEngine::InputManager* inputManager = GameEngine::InputManager::GetInstance();
 
 	auto start = std::chrono::steady_clock::now(), end = std::chrono::steady_clock::now();
 
@@ -42,18 +47,11 @@ int main()
 		start = std::chrono::steady_clock::now();
 		dt = std::chrono::duration_cast<s>(start- end).count();
 
-		//EventManager.update(rdr);
-		if (rdr.PollEvent(events) == false)
+		if (inputManager->Update(&rdr) == false)
 			running = false;
 
-		size_t eventCount = events.size();
-		for (int i = 0; i < eventCount; ++i)
-		{
-			//consume dat events
-		}
-		events.clear();
-
 		go.Update(dt);
+		controller.Update(dt);
 
 		rdr.Render();
 	}
