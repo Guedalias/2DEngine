@@ -2,52 +2,59 @@
 #include "../D2Engine/RenderComponent.h"
 #include "../D2Engine/IOEvent.h"
 
+#include "GameObject.h"
+
+#include "PingPongBall.h"
+
 #include <vector>
+#include <chrono>
+//https://stackoverflow.com/questions/2808398/easily-measure-elapsed-time
+
+#include <iostream>
+
+using s = std::chrono::duration<float>;
+using ms = std::chrono::duration<float, std::milli>;
 
 int main()
 {
 	Engine::Renderer rdr;
 
 	bool running = true;
-
-	float x = 0.0f, y = 0.0f;
-	float xvel = 0.8f, yvel = 0.8f;
-	float deltaTime;
+	float dt = 0.0f;
 
 	rdr.Init(800, 600);
-	Engine::RenderComponent* rc = rdr.AddRenderComponent();
+
+	GameEngine::GameObject go = GameEngine::GameObject();
+
+	//UGLY AS FUCK
+	go.AddRenderComponent(rdr.AddRenderComponent());
+	go.AddScript(new Test::PingPongBall{});
 
 	std::vector<Engine::IOEvent> events;
 
 	//EventManager.subcribe(gameObject, MOUSE_CLICK);
 
+	auto start = std::chrono::steady_clock::now(), end = std::chrono::steady_clock::now();
+
 	while (running)
 	{
+		end = start;
+		start = std::chrono::steady_clock::now();
+		dt = std::chrono::duration_cast<s>(start- end).count();
+
 		//EventManager.update(rdr);
 		if (rdr.PollEvent(events) == false)
 			running = false;
 
-		int eventCount = events.size();
+		size_t eventCount = events.size();
 		for (int i = 0; i < eventCount; ++i)
 		{
 			//consume dat events
 		}
 		events.clear();
 
+		go.Update(dt);
 
-
-		rc->SetPosition(Engine::Vector2D<float>{ x, y });
-		x += xvel;//* dt;
-		y += yvel;//* dt;
-		if (x > 800)
-			xvel = -0.8f;
-		else if (x < 0)
-			xvel = 0.8f;
-
-		if (y > 600)
-			yvel = -0.8f;
-		else if (y < 0)
-			yvel = 0.8f;
 		rdr.Render();
 	}
 

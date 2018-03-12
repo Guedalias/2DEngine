@@ -13,10 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{87993320-b27b-4f22-b5d7-65d2a02799de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Header Files">
+      <UniqueIdentifier>{2f27a601-63e4-419c-af9b-aa0ba969f841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Source Files">
+      <UniqueIdentifier>{562e2a72-2c2b-4b88-a3a7-85ae13f7f5a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PingPongBall.cpp">
+      <Filter>Scripts\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PingPongBall.h">
+      <Filter>Scripts\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
