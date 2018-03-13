@@ -47,8 +47,17 @@ bool GameEngine::InputManager::Update(Engine::Renderer * rdr)
 bool
 GameEngine::InputManager::IsKeyDown(int keyCode)
 {
-	if (keyboard.count(keyCode) == 0)
+	throw;
+}
+
+bool GameEngine::InputManager::IsKeyDown(char key)
+{
+	if (keyboard.count(key) == 0)
 		return false;
-	return keyboard[keyCode];
-	return false;
+	return keyboard[key];
+}
+
+bool GameEngine::InputManager::IsKeyDown(Action action)
+{
+	throw;
 }

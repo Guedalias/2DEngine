@@ -2,11 +2,18 @@
 
 #include "DLLExport.h"
 
+#include <map>
+
 namespace sf {
 	class Event;
 }
 
 namespace Engine {
+	class sfmlEventAdapter
+	{
+	public:
+		const static char Keyboard[];
+	};
 
 	class DllExport IOEvent
 	{
@@ -18,6 +25,8 @@ namespace Engine {
 			KEYPRESSED,
 			KEYRELEASED
 		};
+	private:
+		//static sfmlEventAdapter sfmlEventAdapter;
 	public:
 		int		code;
 		Type	type;

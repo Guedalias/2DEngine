@@ -11,6 +11,16 @@ namespace GameEngine
 {
 	class InputManager
 	{
+	public:
+		enum Action
+		{
+			Left,
+			Right,
+			Up,
+			Down,
+			Slot1,
+			Slot2
+		};
 	/* Singleton Impl */
 	public:
 		static InputManager* GetInstance();
@@ -23,7 +33,11 @@ namespace GameEngine
 		virtual ~InputManager();
 
 		bool Update(Engine::Renderer* rdr);
+		
+
 		bool IsKeyDown(int keyCode);
+		bool IsKeyDown(char key);
+		bool IsKeyDown(Action action);
 	};
 }
 

@@ -35,7 +35,6 @@ int main()
 
 	controller.AddRenderComponent(rdr.AddRenderComponent());
 	controller.AddScript(new Test::FlyController{});
-	
 
 	GameEngine::InputManager* inputManager = GameEngine::InputManager::GetInstance();
 
