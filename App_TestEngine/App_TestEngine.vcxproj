@@ -125,6 +125,7 @@
     <ClCompile Include="FlyController.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cc" />
     <ClCompile Include="PingPongBall.cpp" />
     <ClCompile Include="Script.cpp" />
@@ -133,6 +134,7 @@
     <ClInclude Include="FlyController.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="PingPongBall.h" />
     <ClInclude Include="Script.h" />
   </ItemGroup>
