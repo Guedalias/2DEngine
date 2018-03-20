@@ -44,3 +44,20 @@ bool GameEngine::GameObject::Update(float dt)
 	}
 	return true;
 }
+
+std::ostream&
+GameEngine::operator<<(std::ostream & out, const GameObject & go)
+{
+	out << "GO";
+	out << go._scripts.size();
+	for (size_t i = go._scripts.size() - 1; i >= 0; --i)
+	{
+		out << go._scripts[i];
+	}
+	out << go._rcs.size();
+	for (size_t i = go._rcs.size() - 1; i >= 0; --i)
+	{
+		out << go._rcs[i];
+	}
+	return out;
+}

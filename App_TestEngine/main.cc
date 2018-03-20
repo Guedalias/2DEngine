@@ -4,6 +4,7 @@
 
 #include "GameObject.h"
 #include "InputManager.h"
+#include "Level.h"
 
 #include "PingPongBall.h"
 #include "FlyController.h"
@@ -55,5 +56,16 @@ int main()
 		rdr.Render();
 	}
 
+	{ // Test Save
+		GameEngine::Level lvl;
+		lvl.Init(&rdr);
+		lvl.Save("./TestLvl.lvl");
+	}
+	{ // Test Load
+		GameEngine::Level lvl;
+		lvl.Init(&rdr);
+		lvl.Load("./TestLvl.lvl");
+	}
+	
 	return 0;
 }

@@ -3,6 +3,8 @@
 #include "DLLExport.h"
 #include "Vector2D.hpp"
 
+#include <iostream>
+
 namespace sf
 {
 	class Sprite;
@@ -25,6 +27,8 @@ namespace Engine
 		bool Render(sf::RenderWindow* window);
 		
 		bool SetPosition(Vector2D<float>& pos);
+
+		friend std::ostream& operator<<(std::ostream &out, const RenderComponent &go);
 	};
 
 }

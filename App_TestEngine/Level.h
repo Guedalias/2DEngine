@@ -24,6 +24,8 @@ namespace GameEngine
 		Level();
 		virtual ~Level();
 
+		bool	Init(Engine::Renderer* rdr);
+
 		bool	Update(float dt);
 
 		bool	Load(const std::string& filename);

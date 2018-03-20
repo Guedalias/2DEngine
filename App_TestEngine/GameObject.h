@@ -29,5 +29,7 @@ namespace GameEngine
 		Engine::RenderComponent*	GetRenderComponent(size_t idx = 0) const;
 
 		bool Update(float dt);
+
+		friend std::ostream& operator<< (std::ostream &out, const GameObject &go);
 	};
 }
