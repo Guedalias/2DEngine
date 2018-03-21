@@ -10,9 +10,9 @@ GameEngine::GameObject::GameObject()
 
 GameEngine::GameObject::~GameObject()
 {
-	for (size_t i = _scripts.size() - 1; i >= 0; --i)
+	for (size_t i = _scripts.size(); i > 0; --i)
 	{
-		delete _scripts[i];
+		delete _scripts[i - 1];
 	}
 	_scripts.clear();
 }
@@ -50,14 +50,14 @@ GameEngine::operator<<(std::ostream & out, const GameObject & go)
 {
 	out << "GO";
 	out << go._scripts.size();
-	for (size_t i = go._scripts.size() - 1; i >= 0; --i)
+	for (size_t i = go._scripts.size(); i > 0; --i)
 	{
-		out << go._scripts[i];
+		out << go._scripts[i - 1];
 	}
 	out << go._rcs.size();
-	for (size_t i = go._rcs.size() - 1; i >= 0; --i)
+	for (size_t i = go._rcs.size(); i > 0; --i)
 	{
-		out << go._rcs[i];
+		out << go._rcs[i - 1];
 	}
 	return out;
 }
