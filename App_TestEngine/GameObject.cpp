@@ -10,7 +10,7 @@ GameEngine::GameObject::GameObject()
 
 GameEngine::GameObject::~GameObject()
 {
-	for (int i = _scripts.size() - 1; i >= 0; --i)
+	for (size_t i = _scripts.size() - 1; i >= 0; --i)
 	{
 		delete _scripts[i];
 	}
