@@ -37,11 +37,11 @@ Engine::RenderComponent::SetPosition(Vector2D<float>& pos)
 }
 
 std::ostream&
-Engine::operator<<(std::ostream & out, const Engine::RenderComponent& rc)
+Engine::RenderComponent::Write(std::ostream & out)
 {
 	out << "RC";
 
-	const sf::Vector2f pos = rc._sprite->getPosition();
+	const sf::Vector2f pos = _sprite->getPosition();
 	out << pos.x;
 	out << pos.y;
 

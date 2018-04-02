@@ -30,6 +30,6 @@ namespace GameEngine
 
 		bool Update(float dt);
 
-		friend std::ostream& operator<< (std::ostream &out, const GameObject &go);
+		std::ostream& Write(std::ostream &out);
 	};
 }

@@ -28,7 +28,7 @@ namespace Engine
 		
 		bool SetPosition(Vector2D<float>& pos);
 
-		friend std::ostream& operator<<(std::ostream &out, const RenderComponent &go);
+		std::ostream& Write(std::ostream &out);
 	};
 
 }

@@ -44,6 +44,7 @@ GameEngine::Level::Update(float dt)
 	return true;
 }
 
+
 bool GameEngine::Level::Load(const std::string & filename)
 {
 	std::streampos size;
@@ -59,6 +60,19 @@ bool GameEngine::Level::Load(const std::string & filename)
 		file.close();
 
 		std::cout << "the entire file content is in memory" << std::endl;
+		
+		static const size_t HEADER_SIZE = sizeof(char) * 2;
+		
+		int readCount = 0;
+		std::string header{ memblock, 2 };
+		
+		if (header != "LV")
+			return false;
+		readCount += HEADER_SIZE;
+
+		int entitiesCount = 0;
+		memcpy(&entitiesCount, memblock + readCount, sizeof(int));
+		readCount += sizeof(int);
 
 		delete[] memblock;
 
@@ -73,16 +87,19 @@ bool GameEngine::Level::Save(const std::string & filename)
 	
 	if (file.is_open())
 	{
-		file << "LV";
-		file << _entities.size();
+		file.write("LV", 2 * sizeof(char));
+		int size = _entities.size();
+		file.write((char*)&size, sizeof(size_t));
 		for (size_t i = 0; i < _entities.size(); ++i)
 		{
-			file << _entities[i];
+			_entities[i]->Write(file);
 		}
-		file << _tiles.size();
+
+		int size = _tiles.size();
+		file.write((char*)&size, sizeof(size_t));
 		for (size_t i = 0; i < _tiles.size(); ++i)
 		{
-			file << _tiles[i];
+			_tiles[i]->Write(file);
 		}
 		file.close();
 	}
