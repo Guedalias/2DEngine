@@ -11,10 +11,14 @@ GameEngine::Script::~Script()
 {
 }
 
-std::ostream & GameEngine::operator<<(std::ostream & out, const Script & go)
+std::ostream& 
+GameEngine::Script::Write(std::ostream & out)
 {
+	std::string typeName = typeid(this).name();
+	size_t size = typeName.size();
 
-	out << "Sc";
-	out << typeid(go).name();
+	out.write("Sc", 2 * sizeof(char));
+	out.write((char*)&(size), sizeof(size_t));
+	out.write(typeName.c_str(), typeName.size() * sizeof(char));
 	return out;
 }

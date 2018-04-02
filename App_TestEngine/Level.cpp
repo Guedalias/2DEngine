@@ -88,14 +88,14 @@ bool GameEngine::Level::Save(const std::string & filename)
 	if (file.is_open())
 	{
 		file.write("LV", 2 * sizeof(char));
-		int size = _entities.size();
+		size_t size = _entities.size();
 		file.write((char*)&size, sizeof(size_t));
 		for (size_t i = 0; i < _entities.size(); ++i)
 		{
 			_entities[i]->Write(file);
 		}
 
-		int size = _tiles.size();
+		size = _tiles.size();
 		file.write((char*)&size, sizeof(size_t));
 		for (size_t i = 0; i < _tiles.size(); ++i)
 		{

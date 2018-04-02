@@ -17,7 +17,7 @@ namespace GameEngine
 
 		virtual bool Update(float dt, GameObject* go) = 0;
 
-		friend std::ostream& operator<<(std::ostream& out, const Script& go);
+		std::ostream& Write(std::ostream& out);
 	};
 }
 
