@@ -18,6 +18,7 @@ namespace GameEngine
 		virtual bool Update(float dt, GameObject* go) = 0;
 
 		std::ostream& Write(std::ostream& out);
+		bool	ReadConstruct(std::ifstream& in);
 	};
 }
 

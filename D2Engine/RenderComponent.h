@@ -29,6 +29,7 @@ namespace Engine
 		bool SetPosition(Vector2D<float>& pos);
 
 		std::ostream& Write(std::ostream &out);
+		bool	ReadConstruct(std::ifstream& in);
 	};
 
 }

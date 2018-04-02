@@ -66,3 +66,8 @@ GameEngine::GameObject::Write(std::ostream & out)
 	}
 	return out;
 }
+
+bool GameEngine::GameObject::ReadConstruct(std::ifstream & in)
+{
+	return false;
+}

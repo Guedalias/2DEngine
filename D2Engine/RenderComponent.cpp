@@ -55,3 +55,8 @@ Engine::RenderComponent::Write(std::ostream & out)
 
 	return out;
 }
+
+bool Engine::RenderComponent::ReadConstruct(std::ifstream & in)
+{
+	return false;
+}

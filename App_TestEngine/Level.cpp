@@ -53,29 +53,33 @@ bool GameEngine::Level::Load(const std::string & filename)
 	std::ifstream file(filename, std::ios::binary | std::ios::ate);
 	if (file.is_open())
 	{
-		size = file.tellg();
-		memblock = new char[size];
 		file.seekg(0, std::ios::beg);
-		file.read(memblock, size);
-		file.close();
-
-		std::cout << "the entire file content is in memory" << std::endl;
+		
 		
 		static const size_t HEADER_SIZE = sizeof(char) * 2;
 		
 		int readCount = 0;
-		std::string header{ memblock, 2 };
+
+		char		header[2];
+		file.read(header, HEADER_SIZE);
 		
-		if (header != "LV")
+		if (!strcmp(header, "LV"))
 			return false;
 		readCount += HEADER_SIZE;
 
 		int entitiesCount = 0;
-		memcpy(&entitiesCount, memblock + readCount, sizeof(int));
+		file.read((char*)&entitiesCount, sizeof(int));
 		readCount += sizeof(int);
 
-		delete[] memblock;
+		for (int i = 0; i < entitiesCount; ++i)
+		{
+			GameEngine::GameObject* go = new GameEngine::GameObject();
+			go->ReadConstruct(file/*, rdr*/);
+			
+			_entities.push_back(go);
+		}
 
+		file.close();
 		//https://stackoverflow.com/questions/19036462/c-generic-object-factory-by-string-name
 	}
 	return false;

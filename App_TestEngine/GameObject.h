@@ -31,5 +31,7 @@ namespace GameEngine
 		bool Update(float dt);
 
 		std::ostream& Write(std::ostream &out);
+
+		bool	ReadConstruct(std::ifstream& in);
 	};
 }
