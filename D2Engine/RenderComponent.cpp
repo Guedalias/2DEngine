@@ -39,17 +39,19 @@ Engine::RenderComponent::SetPosition(Vector2D<float>& pos)
 std::ostream&
 Engine::RenderComponent::Write(std::ostream & out)
 {
-	out << "RC";
+	out.write("RC", 2 * sizeof(char));
 
 	const sf::Vector2f pos = _sprite->getPosition();
-	out << pos.x;
-	out << pos.y;
+	out.write((char*)&pos.x, sizeof(float));
+	out.write((char*)&pos.y, sizeof(float));
 
 	//Texture ref should be something like that :
 	//sf::Texture* t = go._sprite->getTexture();
 	//std::string filePath = RessourceManager->GetInstance()->GetFileFromTexture();
 	// out << filePath.size() << filePath;
-	out << 11;
-	out << "./debug.png";
+	int a = 11;
+	out.write((char*)&a, sizeof(int));
+	out.write("./debug.png", 11 * sizeof(char));
+
 	return out;
 }
