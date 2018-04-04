@@ -48,7 +48,6 @@ GameEngine::Level::Update(float dt)
 bool GameEngine::Level::Load(const std::string & filename)
 {
 	std::streampos size;
-	char * memblock;
 
 	std::ifstream file(filename, std::ios::binary | std::ios::ate);
 	if (file.is_open())
