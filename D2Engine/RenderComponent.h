@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DLLExport.h"
-#include "Vector2D.hpp"
+#include "../Utils/DLLExport.h"
+#include "../Utils/Vector2D.hpp"
 
 #include <iostream>
 

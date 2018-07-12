@@ -4,21 +4,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D2Engine", "D2Engine\D2Engine.vcxproj", "{4E621EC9-AE79-4370-8B92-84CA4AB79D7B}"
-	GlobalSection(ADELEProviderSolutionProperties) = preSolution
-		SolutionIsControlled = True
-		SolutionBindings = <Solution Location In Database>
-	EndGlobalSection
+	ProjectSection(ProjectDependencies) = postProject
+		{8599228E-6866-4CA3-ADCF-E9040033474D} = {8599228E-6866-4CA3-ADCF-E9040033474D}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "App_TestEngine", "App_TestEngine\App_TestEngine.vcxproj", "{D43DAAD0-8D78-4F85-A1D3-B223D6DF18F3}"
 	ProjectSection(ProjectDependencies) = postProject
+		{8599228E-6866-4CA3-ADCF-E9040033474D} = {8599228E-6866-4CA3-ADCF-E9040033474D}
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C} = {523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}
 		{4E621EC9-AE79-4370-8B92-84CA4AB79D7B} = {4E621EC9-AE79-4370-8B92-84CA4AB79D7B}
 	EndProjectSection
-	GlobalSection(ADELEProviderSolutionProperties) = preSolution
-		SolutionIsControlled = True
-		SolutionBindings = <Solution Location In Database>
-	EndGlobalSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3EngineOGL", "D3EngineOGL\D3EngineOGL.vcxproj", "{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8599228E-6866-4CA3-ADCF-E9040033474D} = {8599228E-6866-4CA3-ADCF-E9040033474D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utils", "Utils\Utils.vcxproj", "{8599228E-6866-4CA3-ADCF-E9040033474D}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -42,9 +49,33 @@ Global
 		{D43DAAD0-8D78-4F85-A1D3-B223D6DF18F3}.Release|x64.Build.0 = Release|x64
 		{D43DAAD0-8D78-4F85-A1D3-B223D6DF18F3}.Release|x86.ActiveCfg = Release|Win32
 		{D43DAAD0-8D78-4F85-A1D3-B223D6DF18F3}.Release|x86.Build.0 = Release|Win32
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Debug|x64.ActiveCfg = Debug|x64
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Debug|x64.Build.0 = Debug|x64
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Debug|x86.ActiveCfg = Debug|Win32
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Debug|x86.Build.0 = Debug|Win32
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Release|x64.ActiveCfg = Release|x64
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Release|x64.Build.0 = Release|x64
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Release|x86.ActiveCfg = Release|Win32
+		{523AB18E-C23D-4CA0-86C1-DCAA1F2E278C}.Release|x86.Build.0 = Release|Win32
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Debug|x64.ActiveCfg = Debug|x64
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Debug|x64.Build.0 = Debug|x64
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Debug|x86.ActiveCfg = Debug|Win32
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Debug|x86.Build.0 = Debug|Win32
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Release|x64.ActiveCfg = Release|x64
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Release|x64.Build.0 = Release|x64
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Release|x86.ActiveCfg = Release|Win32
+		{8599228E-6866-4CA3-ADCF-E9040033474D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ADELEProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(ADELEProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
 	EndGlobalSection
 	GlobalSection(ADELEProviderSolutionProperties) = preSolution
 		SolutionIsControlled = True

@@ -2,7 +2,7 @@
 
 #include "GameObject.h"
 
-#include "../D2Engine/Vector2D.hpp"
+#include "../Utils/Vector2D.hpp"
 #include "../D2Engine/RenderComponent.h"
 
 #include "InputManager.h"

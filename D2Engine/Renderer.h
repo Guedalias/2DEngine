@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DLLExport.h"
+#include "../Utils/DLLExport.h"
 
 #include <vector>
 
